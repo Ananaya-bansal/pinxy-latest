@@ -23,14 +23,14 @@ struct ContactStruct : Equatable{
     
 }
 
-protocol ContactUpdateDelegate: AnyObject {
-    func contactAdded(_ contact: ContactStruct)
-    func contactRemoved(_ contact: ContactStruct)
-}
+//protocol ContactUpdateDelegate: AnyObject {
+//    func contactAdded(_ contact: ContactStruct)
+//    func contactRemoved(_ contact: ContactStruct)
+//}
 
 class ContactManager {
     static let shared = ContactManager()
-    weak var delegate: ContactUpdateDelegate?
+//    weak var delegate: ContactUpdateDelegate?
     public var contacts: [ContactStruct] = []
 //    private(set) var contacts: [ContactStruct] {
 //         get {
@@ -44,13 +44,13 @@ class ContactManager {
     func getAllContacts() -> [ContactStruct] { return self.contacts }
     func addContact(_ contact: ContactStruct) {
         contacts.append(contact)
-      delegate?.contactAdded(contact)
+      //delegate?.contactAdded(contact)
     }
 
     func removeContact(_ contact: ContactStruct) {
         if let index = contacts.firstIndex(of: contact) {
             contacts.remove(at: index)
-         delegate?.contactRemoved(contact)
+        // delegate?.contactRemoved(contact)
         }
     }
     func containsContact(_ contact: ContactStruct) -> Bool {
@@ -63,20 +63,21 @@ class ContactManager {
 struct Event {
     var name: String
     var dateTime: Date
-    var contacts: [ContactStruct]
-    var images:[UIImage]
+    //var contacts: [String]
+   var contacts: [ContactStruct]
+  //  var images:[UIImage]
 }
 
-struct PastAlbum {
-    var EventDetails : [Event]
-    var imageURL: UIImage
+struct Album {
+    var EventDetails : Event
+    var image: [String] = []
 }
 
-struct FriendsAlbum{
-    var FriendDetails : [Event]
-    var pastAlbums :[PastAlbum]
-    
-}
+//struct FriendsAlbum{
+//    var FriendDetails : [Event]
+//    var pastAlbums :[PastAlbum]
+//    
+//}
 
 struct PersonalAccount{
     var name : String
@@ -95,4 +96,10 @@ struct Pic {
     let title: String
     let date: String
     let imageName: String
+}
+
+struct Request {
+    let UserName: String
+    let PhoneNo: Int
+    let ProfileImage: String
 }

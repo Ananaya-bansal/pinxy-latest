@@ -17,10 +17,13 @@
 		17A465B52BD7AF9B0027848C /* ContactStruct.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17A465B42BD7AF9B0027848C /* ContactStruct.swift */; };
 		17A465B72BD7C0920027848C /* CameraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17A465B62BD7C0920027848C /* CameraViewController.swift */; };
 		17A465BB2BD7C3F10027848C /* EventViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17A465BA2BD7C3F10027848C /* EventViewController.swift */; };
+		17A7D6D62BE106E3009229FD /* RequestConnectionTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17A7D6D52BE106E3009229FD /* RequestConnectionTableViewController.swift */; };
+		17A7D6DA2BE1FD8E009229FD /* RequestTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17A7D6D92BE1FD8E009229FD /* RequestTableViewCell.swift */; };
+		17A7D6E72BE215BC009229FD /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17A7D6E62BE215BC009229FD /* ContentView.swift */; };
 		17E3F7102BDB8B140077CC58 /* AccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17E3F70F2BDB8B140077CC58 /* AccountViewController.swift */; };
 		17E3F7122BDB8B240077CC58 /* EditAccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17E3F7112BDB8B240077CC58 /* EditAccountViewController.swift */; };
 		17E3F7182BE0C0710077CC58 /* CustomTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17E3F7172BE0C0710077CC58 /* CustomTableViewCell.swift */; };
-		17E3F71A2BE0C0CF0077CC58 /* AlbumViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17E3F7192BE0C0CF0077CC58 /* AlbumViewController.swift */; };
+		17E3F71A2BE0C0CF0077CC58 /* AlbumsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17E3F7192BE0C0CF0077CC58 /* AlbumsTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,10 +39,13 @@
 		17A465B42BD7AF9B0027848C /* ContactStruct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactStruct.swift; sourceTree = "<group>"; };
 		17A465B62BD7C0920027848C /* CameraViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraViewController.swift; sourceTree = "<group>"; };
 		17A465BA2BD7C3F10027848C /* EventViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventViewController.swift; sourceTree = "<group>"; };
+		17A7D6D52BE106E3009229FD /* RequestConnectionTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestConnectionTableViewController.swift; sourceTree = "<group>"; };
+		17A7D6D92BE1FD8E009229FD /* RequestTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestTableViewCell.swift; sourceTree = "<group>"; };
+		17A7D6E62BE215BC009229FD /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		17E3F70F2BDB8B140077CC58 /* AccountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountViewController.swift; sourceTree = "<group>"; };
 		17E3F7112BDB8B240077CC58 /* EditAccountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditAccountViewController.swift; sourceTree = "<group>"; };
 		17E3F7172BE0C0710077CC58 /* CustomTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTableViewCell.swift; sourceTree = "<group>"; };
-		17E3F7192BE0C0CF0077CC58 /* AlbumViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumViewController.swift; sourceTree = "<group>"; };
+		17E3F7192BE0C0CF0077CC58 /* AlbumsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumsTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -76,7 +82,6 @@
 				17E3F7132BE0BEC90077CC58 /* VC */,
 				17A4659E2BD78BBF0027848C /* AppDelegate.swift */,
 				17A465A02BD78BBF0027848C /* SceneDelegate.swift */,
-				17A465A22BD78BBF0027848C /* ViewController.swift */,
 				17A465A42BD78BBF0027848C /* Main.storyboard */,
 				17A465A72BD78BC10027848C /* Assets.xcassets */,
 				17A465A92BD78BC10027848C /* LaunchScreen.storyboard */,
@@ -85,16 +90,92 @@
 			path = PineApples_Pinxy;
 			sourceTree = "<group>";
 		};
+		17A7D6DB2BE2118C009229FD /* TableViewController */ = {
+			isa = PBXGroup;
+			children = (
+				17A7D6DE2BE21207009229FD /* Albums */,
+				17A7D6DD2BE211E0009229FD /* Connections */,
+				17A7D6DC2BE211CF009229FD /* Event */,
+			);
+			path = TableViewController;
+			sourceTree = "<group>";
+		};
+		17A7D6DC2BE211CF009229FD /* Event */ = {
+			isa = PBXGroup;
+			children = (
+				17A465BA2BD7C3F10027848C /* EventViewController.swift */,
+				17A7D6DF2BE21232009229FD /* Contact */,
+			);
+			path = Event;
+			sourceTree = "<group>";
+		};
+		17A7D6DD2BE211E0009229FD /* Connections */ = {
+			isa = PBXGroup;
+			children = (
+				17A7D6D52BE106E3009229FD /* RequestConnectionTableViewController.swift */,
+				17A7D6D92BE1FD8E009229FD /* RequestTableViewCell.swift */,
+			);
+			path = Connections;
+			sourceTree = "<group>";
+		};
+		17A7D6DE2BE21207009229FD /* Albums */ = {
+			isa = PBXGroup;
+			children = (
+				17E3F7192BE0C0CF0077CC58 /* AlbumsTableViewController.swift */,
+				17E3F7172BE0C0710077CC58 /* CustomTableViewCell.swift */,
+				17A465A22BD78BBF0027848C /* ViewController.swift */,
+				17A7D6E62BE215BC009229FD /* ContentView.swift */,
+			);
+			path = Albums;
+			sourceTree = "<group>";
+		};
+		17A7D6DF2BE21232009229FD /* Contact */ = {
+			isa = PBXGroup;
+			children = (
+				17A465B22BD7AF800027848C /* ContactViewController.swift */,
+			);
+			path = Contact;
+			sourceTree = "<group>";
+		};
+		17A7D6E02BE21243009229FD /* View Controller */ = {
+			isa = PBXGroup;
+			children = (
+				17A7D6E22BE21267009229FD /* Profile */,
+				17A7D6E12BE21252009229FD /* Camera */,
+			);
+			path = "View Controller";
+			sourceTree = "<group>";
+		};
+		17A7D6E12BE21252009229FD /* Camera */ = {
+			isa = PBXGroup;
+			children = (
+				17A465B62BD7C0920027848C /* CameraViewController.swift */,
+			);
+			path = Camera;
+			sourceTree = "<group>";
+		};
+		17A7D6E22BE21267009229FD /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				17A7D6E32BE21287009229FD /* Edit Profile table view controller */,
+				17E3F70F2BDB8B140077CC58 /* AccountViewController.swift */,
+			);
+			path = Profile;
+			sourceTree = "<group>";
+		};
+		17A7D6E32BE21287009229FD /* Edit Profile table view controller */ = {
+			isa = PBXGroup;
+			children = (
+				17E3F7112BDB8B240077CC58 /* EditAccountViewController.swift */,
+			);
+			path = "Edit Profile table view controller";
+			sourceTree = "<group>";
+		};
 		17E3F7132BE0BEC90077CC58 /* VC */ = {
 			isa = PBXGroup;
 			children = (
-				17E3F7192BE0C0CF0077CC58 /* AlbumViewController.swift */,
-				17A465BA2BD7C3F10027848C /* EventViewController.swift */,
-				17A465B62BD7C0920027848C /* CameraViewController.swift */,
-				17A465B22BD7AF800027848C /* ContactViewController.swift */,
-				17E3F70F2BDB8B140077CC58 /* AccountViewController.swift */,
-				17E3F7172BE0C0710077CC58 /* CustomTableViewCell.swift */,
-				17E3F7112BDB8B240077CC58 /* EditAccountViewController.swift */,
+				17A7D6E02BE21243009229FD /* View Controller */,
+				17A7D6DB2BE2118C009229FD /* TableViewController */,
 			);
 			path = VC;
 			sourceTree = "<group>";
@@ -178,7 +259,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				17A7D6D62BE106E3009229FD /* RequestConnectionTableViewController.swift in Sources */,
 				17E3F7122BDB8B240077CC58 /* EditAccountViewController.swift in Sources */,
+				17A7D6E72BE215BC009229FD /* ContentView.swift in Sources */,
 				17A465A32BD78BBF0027848C /* ViewController.swift in Sources */,
 				17A465B32BD7AF800027848C /* ContactViewController.swift in Sources */,
 				17E3F7102BDB8B140077CC58 /* AccountViewController.swift in Sources */,
@@ -186,9 +269,10 @@
 				17A465B52BD7AF9B0027848C /* ContactStruct.swift in Sources */,
 				17E3F7182BE0C0710077CC58 /* CustomTableViewCell.swift in Sources */,
 				17A4659F2BD78BBF0027848C /* AppDelegate.swift in Sources */,
+				17A7D6DA2BE1FD8E009229FD /* RequestTableViewCell.swift in Sources */,
 				17A465A12BD78BBF0027848C /* SceneDelegate.swift in Sources */,
 				17A465B72BD7C0920027848C /* CameraViewController.swift in Sources */,
-				17E3F71A2BE0C0CF0077CC58 /* AlbumViewController.swift in Sources */,
+				17E3F71A2BE0C0CF0077CC58 /* AlbumsTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
