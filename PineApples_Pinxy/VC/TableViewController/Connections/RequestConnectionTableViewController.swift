@@ -13,21 +13,18 @@ class RequestConnectionTableViewController: UITableViewController {
     
     
     let data: [Request] = [
-        Request(UserName: "Emily", PhoneNo:2345654575, ProfileImage: "pic0"),
-        Request(UserName: "Ana", PhoneNo:233434765, ProfileImage: "pic1"),
-        Request(UserName: "John", PhoneNo:433544745, ProfileImage: "pic2"),
-        Request(UserName: "Emma", PhoneNo:5356464645, ProfileImage: "pic4"),
-        Request(UserName: "Max", PhoneNo:355554567, ProfileImage: "pic5"),
-        Request(UserName: "Ben", PhoneNo:5545644578, ProfileImage: "pic3"),
-       
+        Request(userName: "Emily", phoneNo:2345654575, profileImage: "pic0"),
+        Request(userName: "Ana", phoneNo:233434765, profileImage: "pic1"),
+        Request(userName: "John", phoneNo:433544745, profileImage: "pic2"),
+        Request(userName: "Emma", phoneNo:5356464645, profileImage: "pic4"),
+        Request(userName: "Max", phoneNo:355554567, profileImage: "pic5"),
+        Request(userName: "Ben", phoneNo:5545644578, profileImage: "pic3"),
     ]
 
     override func viewDidLoad() {
         super.viewDidLoad()
         table.dataSource = self
         table.delegate = self
-        
-        
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -37,9 +34,9 @@ class RequestConnectionTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let pic = data[indexPath.row]
         let cell = table.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! RequestTableViewCell
-        cell.PhoneNo.text = "\(pic.PhoneNo)"
-        cell.UserName.text = pic.UserName
-        cell.ProfileImage.image = UIImage(named: pic.ProfileImage)
+        cell.PhoneNo.text = "\(pic.phoneNo)"
+        cell.UserName.text = pic.userName
+        cell.ProfileImage.image = UIImage(named: pic.profileImage)
         
         // Add separator view
             let separatorView = UIView(frame: CGRect(x: 0, y: cell.frame.size.height - 1, width: tableView.frame.width, height: 1))

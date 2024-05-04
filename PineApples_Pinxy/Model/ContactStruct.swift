@@ -7,99 +7,105 @@
 
 import Foundation
 import UIKit
-let defaultImage = UIImage(systemName: "photo.on.rectangle.angled")
 
-struct ContactStruct : Equatable{
+let defaultImage = UIImage(systemName: "person.crop.circle.fill")
+
+struct ContactStruct: Equatable {
     let givenName: String
     let familyName: String
     let number: String
-    let givenImage : UIImage
-  
-    static func ==(lhs: ContactStruct, rhs: ContactStruct) -> Bool {
-            return lhs.givenName == rhs.givenName &&
-                   lhs.familyName == rhs.familyName &&
-                   lhs.number == rhs.number
-        }
+    let givenImage: UIImage
     
+    static func ==(lhs: ContactStruct, rhs: ContactStruct) -> Bool {
+        return lhs.givenName == rhs.givenName &&
+               lhs.familyName == rhs.familyName &&
+               lhs.number == rhs.number
+    }
 }
 
-//protocol ContactUpdateDelegate: AnyObject {
-//    func contactAdded(_ contact: ContactStruct)
-//    func contactRemoved(_ contact: ContactStruct)
-//}
+// MARK: - Contact Manager
 
 class ContactManager {
     static let shared = ContactManager()
-//    weak var delegate: ContactUpdateDelegate?
     public var contacts: [ContactStruct] = []
-//    private(set) var contacts: [ContactStruct] {
-//         get {
-//             return contacts
-//         }
-//         set {
-//             contacts = newValue
-//         }
-//     }
 
     func getAllContacts() -> [ContactStruct] { return self.contacts }
+    
     func addContact(_ contact: ContactStruct) {
         contacts.append(contact)
-      //delegate?.contactAdded(contact)
     }
-
+    
     func removeContact(_ contact: ContactStruct) {
         if let index = contacts.firstIndex(of: contact) {
             contacts.remove(at: index)
-        // delegate?.contactRemoved(contact)
         }
     }
+    
     func containsContact(_ contact: ContactStruct) -> Bool {
-           return contacts.contains(contact)
-       }
+        return contacts.contains(contact)
+    }
 }
 
 // MARK: - Event Struct
 
-struct Event {
+struct Event: Equatable {
     var name: String
     var dateTime: Date
-    //var contacts: [String]
-   var contacts: [ContactStruct]
-  //  var images:[UIImage]
+    var contacts: [ContactStruct]
 }
 
+// MARK: - Album Struct
+
 struct Album {
-    var EventDetails : Event
+    var EventDetails: Event
     var image: [String] = []
 }
 
-//struct FriendsAlbum{
-//    var FriendDetails : [Event]
-//    var pastAlbums :[PastAlbum]
-//    
-//}
+// MARK: - Personal Account Struct
 
-struct PersonalAccount{
-    var name : String
+struct PersonalAccount {
+    var name: String
     var username: String
     var email: String
     var phone: Int
     var dob: Date
-    var image : UIImage
-    
+    var image: UIImage
 }
 
-//class Personal{
-//    static let
-//}
+// MARK: - Pic Struct
+
 struct Pic {
     let title: String
     let date: String
     let imageName: String
 }
 
+// MARK: - Request Struct
+
 struct Request {
-    let UserName: String
-    let PhoneNo: Int
-    let ProfileImage: String
+    let userName: String
+    let phoneNo: Int
+    let profileImage: String
+}
+
+// MARK: - Event Model
+
+class EventModel {
+    static let shared = EventModel()
+    public static var events: [Event] = []
+    public static var presentEvent: Event? = nil
+     
+    static func getAllEvents() -> [Event] { return self.events }
+    
+    static func addEvent(_ event: Event) { events.append(event) }
+    
+    static func removeEvent(_ event: Event) {
+        if let index = events.firstIndex(of: event) {
+            events.remove(at: index)
+        }
+    }
+    
+    static func containsEvent(_ event: Event) -> Bool {
+        return events.contains(event)
+    }
 }

@@ -8,13 +8,13 @@
 import UIKit
 import SwiftUI
 class ViewController: UIViewController {
-
+    var images : [String] = []
     override func viewDidLoad() {
         super.viewDidLoad()
-        extractView()    }
-    var images : [UIImage] = []
+        extractView()
+    }
     func extractView(){
-        let hostView = UIHostingController(rootView: ContentView())
+        let hostView = UIHostingController(rootView: ContentView(images: images))
         hostView.view.translatesAutoresizingMaskIntoConstraints = false
         self.view.addSubview(hostView.view)
         let constraints = [
@@ -30,3 +30,4 @@ class ViewController: UIViewController {
         })
     }
 }
+
