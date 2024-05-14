@@ -58,10 +58,9 @@ Photo management: Tips for efficiently locating specific pictures within the app
 Ananaya ([GitHub](https://github.com/ananayabansal))
 
 
-Here's a summary of the `StorageManager.swift` file for documentation:-
-
+=============================================================================================
  UIView Extension
- This Swift file contains an extension to the UIView class in UIKit, providing convenient computed properties to access common geometric properties of a view's frame. These properties include:
+This Swift file contains an extension to the UIView class in UIKit, providing convenient computed properties to access common geometric properties of a view's frame. These properties include:
 width: Represents the width of the view.
 height: Represents the height of the view.
 top: Represents the y-coordinate of the top edge of the view's frame.
@@ -70,9 +69,7 @@ left: Represents the x-coordinate of the left edge of the view's frame.
 right: Represents the x-coordinate of the right edge of the view's frame.
 These properties simplify access to frame dimensions and positions, enhancing code readability and maintainability when working with views in iOS app development.
 
-Here's a brief summary you can use for your README file:
-
----
+-----------------------------------------------------------------------
 
 
  StorageManager
